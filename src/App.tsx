@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import{Dashboard} from './components/Dashboard';
 import {Header} from './components/Header';
 import {NewTransactionModal} from './components/NewTransactionModal';
-
+import {TransactionsProvider} from './hooks/useTransactions';
 import {GlobalStyle} from './styles/global';
 
 Modal.setAppElement('#root');
@@ -11,6 +11,7 @@ Modal.setAppElement('#root');
 export function App() {
   
   const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] = useState(false);
+
 
   function handleOpenNewTransactionModal(){
       setIsNewTransactionModalOpen(true);
@@ -20,8 +21,10 @@ export function App() {
       setIsNewTransactionModalOpen(false);
   }
 
+  //rapasse de funções : propriedades pai/mae para propriedades filhos
+  
   return (
-    <>
+    <TransactionsProvider>
 
       <Header onOpenNewTransactionsModal={handleOpenNewTransactionModal}/>
 
@@ -34,6 +37,6 @@ export function App() {
 
       <GlobalStyle/>
       
-    </>
+    </TransactionsProvider>
   );
 }

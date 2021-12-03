@@ -1,12 +1,11 @@
 import logoImg from '../../assets/logo.svg'
-
 import {Container,Content} from './styles'
 
 interface HeaderProps{
-
     onOpenNewTransactionsModal:() => void;
 }
 
+//função - quando o botão for clicado vai abrir o modal, o modal pode ir em qualquer lugar. ele nao está aqui
 export function Header({onOpenNewTransactionsModal}:HeaderProps){
 
     return(

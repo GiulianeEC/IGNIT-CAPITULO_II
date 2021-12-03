@@ -59,9 +59,9 @@ export const GlobalStyle =  createGlobalStyle`
     }
 
     .react-modal-overlay{
-        background: var(0 , 0, 0, 0.5);
+        background: rgba(0 , 0, 0, 0.5);
 
-        position: absolute;
+        position: fixed;
         top: 0;
         bottom: 0;
         right: 0;
@@ -70,7 +70,6 @@ export const GlobalStyle =  createGlobalStyle`
         display:flex;
         align-items: center;
         justify-content: center;
-
 
     }
     .react-modal-content{
